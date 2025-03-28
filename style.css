@@ -64,7 +64,7 @@ hr.animated-hr {
     height: 1px;
     animation: changeColor 5s infinite;
   }
-  img{
+  .img{
     border-radius: 1000px;
     border-color: #088ad4;
   }
