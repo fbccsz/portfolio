@@ -5,18 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechConnect</title>
     <link rel="stylesheet" href="style.css">
+    <style> /* Estilo do foguete */
+        #foguete {
+            display: none;
+            width: 150px;
+            margin: 40px auto 0;
+            animation: decolar 3s ease-out forwards;
+        }
+
+        @keyframes decolar {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-300px);
+                opacity: 0;
+            }
+        }</style>
 </head>
 <body>
     <header>
         <h1 class="texto-header" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">TechConnect</h1>
-        <div class="button floatLeft" href="(LINK)" id="div"><a href="#sobre">Sobre nós</a></div>
+        <div class="button floatLeft" id="div"><a href="#sobre">Sobre nós</a></div>
+       
         <section id="grid">
             <h5>Transformando sonhos em realidades.</h5>
         </section>
     </header>
     <h4 class="subject" id="sobre">A <i><strong style="color: red";>TechConnect</strong></i> é uma startup inovadora dedicada a conectar profissionais de tecnologia e design através de eventos e iniciativas educacionais. Nosso objetivo é fomentar a troca de conhecimento, promover networking e impulsionar a inovação no setor.</h4>
     <p id="additionalContent" style="display: none;">Somos apaixonados por conectar pessoas, compartilhar conhecimento e inspirar inovação no mundo da tecnologia e design.</p>
-        <br><br><br><br><br><br><br><h4 class="subject2 animation" >Em breve ocorrerá a <i style="color: red; font-size: larger;">TechFuture Summit 2025</i>
+          <!-- Foguete -->
+    <img id="foguete" src="foguete.png" alt="Foguete decolando" />
+    <br><br><br><br><br><br><br><h4 class="subject2 animation" >Em breve ocorrerá a <i style="color: red; font-size: larger;">TechFuture Summit 2025</i>
             <br>trazendo dois palestrantes renomados:
             <table>
             <tr>
@@ -67,4 +91,21 @@
 </body>
 <script src="techconnect/header.js"></script>
 <script src="formulario.js"></script>
+<script>
+    document.querySelector('a[href="#sobre"]').addEventListener('click', function () {
+        const foguete = document.getElementById('foguete');
+
+        // Espera a rolagem e mostra o foguete
+        setTimeout(() => {
+            foguete.style.display = 'block';
+            void foguete.offsetWidth; // força reflow
+            foguete.style.animation = 'decolar 3s ease-out forwards';
+
+            // Esconde novamente após a animação
+            setTimeout(() => {
+                foguete.style.display = 'none';
+            }, 3000);
+        }, 600); // tempo para dar scroll até a seção
+    });
+</script>
 </html>

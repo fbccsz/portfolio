@@ -13,8 +13,10 @@ header {
     right: -0.7%;
  }
  h1{
-    font-family:monospace;
     color:rgb(7, 7, 252);
+    -webkit-text-stroke: #000000;
+    -webkit-text-stroke-width: 0.5px;
+    font-size: 2em;
  }
  #grid{
     grid-template-columns: auto;
@@ -29,7 +31,25 @@ header {
     transform: translateY(-520%);
 }
 #div{
-    border: 1px solid; padding: 11px 21px; vertical-align: middle; background: rgb(13, 13, 61); color:white;border-radius:6px; font-size: 20px; font-family:helvetica, serif;text-decoration:none;
+    border: 1px solid; 
+    padding: 11px 21px; 
+    vertical-align: middle; 
+    background: rgb(13, 13, 61); 
+    color:rgb(34, 0, 255);
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
+}
+#div:hover{
+    border: 1px solid; 
+    padding: 11px 21px; 
+    vertical-align: middle; 
+    background: rgb(12, 12, 122); 
+    border-radius:6px; 
+    font-size: 20px; 
+    font-family:helvetica, serif;
+    text-decoration:none;
 }
 a{
     text-decoration: none;
